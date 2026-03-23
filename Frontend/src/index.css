@@ -1,0 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Poppins:ital,wght@0,100;0,200;0,500;1,100&display=swap');
+@import "tailwindcss";
+@plugin "daisyui";
+
+body{
+    font-family: 'Poppins', sans-serif;
+}
