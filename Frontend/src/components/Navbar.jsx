@@ -20,6 +20,7 @@ function Navbar() {
 
     const navItems = (
         <>
+        
         <li><a>Home</a></li>
       <li><a>Course</a></li>
       <li><a>Contact</a></li>
@@ -28,8 +29,14 @@ function Navbar() {
     )
 
   return (
-   <div className="navbar bg-base-100 shadow-sm max-w-screen-2xl container mx-auto md:px-20 px-4 fixed top-0 left-0 right-0">
-  <div className="navbar-start">
+    <>
+<div
+        className={` max-w-screen-2xl container mx-auto md:px-20 px-4 dark:bg-slate-800 dark:text-white fixed top-0 left-0 right-0 z-50 ${
+          sticky
+            ? "sticky-navbar shadow-md bg-base-200 dark:bg-slate-700 dark:text-white duration-300 transition-all ease-in-out"
+            : ""
+        }`}
+      >  <div className="navbar-start">
     <div className="dropdown">
       <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /> </svg>
@@ -92,6 +99,7 @@ function Navbar() {
     </a>
   </div>
 </div>
+</>
   )
 }
 
