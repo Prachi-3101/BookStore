@@ -1,21 +1,25 @@
 import { useState } from 'react'
 import './App.css'
-import Navbar from './components/Navbar'
-import Banner from './components/Banner'
-import Footer from './components/Footer'
-import Cards from './components/Cards'
-import FreeBooks from './components/FreeBooks.jsx'
+import Home from "./home/Home.jsx"
+import { Navigate, Route, Routes } from "react-router-dom";
+import { Toaster } from "react-hot-toast";
+import Courses from './courses/Courses.jsx';
+import Signup from './components/Signup.jsx';
+import Login from './components/Login.jsx';
+
 
 function App() {
   
 
   return (
-    <>
-    <Navbar />
-    <Banner />
-    <FreeBooks />
-    <Footer />
-    </>
+  <>
+   <Routes>
+          <Route path="/" element={<Home />} />
+           <Route path="/course" element={<Courses />} />
+           <Route path="/login" element={<Signup />} />
+           <Route path="/signup" element={<Signup />} />
+          </Routes>
+  </>
   )
 }
 

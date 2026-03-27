@@ -4,7 +4,7 @@
     "name": "Prachi Bookstore",
     "title": "Atomic Habits",
     "price": 399,
-    "category": "Self Help",
+    "category": "Free",
     "image": "https://picsum.photos/200/300?random=1"
   },
   {
@@ -12,7 +12,7 @@
     "name": "City Lights Books",
     "title": "The Alchemist",
     "price": 299,
-    "category": "Fiction",
+    "category": "Free",
     "image": "https://picsum.photos/200/300?random=2"
   },
   {

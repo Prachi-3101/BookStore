@@ -3,7 +3,9 @@ import React from "react";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import Slider from "react-slick";
+import Slick from "react-slick";
+
+const Slider = Slick.default || Slick;
 
 import list from "../data/list.json"
 import Cards from "./Cards";
