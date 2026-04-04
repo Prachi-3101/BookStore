@@ -11,28 +11,29 @@ function Login() {
   } = useForm();
 
   const onSubmit = async (data) => {
-    const userInfo = {
-      email: data.email,
-      password: data.password,
-    };  
     try{
-      const response = await fetch("http://localhost:3000/api/auth/login",userInfo,{
+      const response = await fetch("http://localhost:3000/api/v1/users/login",{
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
+        credentials: "include",
         body: JSON.stringify({
-          email: data.email,
-          password: data.password,
+          data
         }),
-        credentials: "include"
       })
-      const data = await response?.json();
-      toast.success(data?.message);
+      const result = await response?.json();
+
+      if(!response.ok){
+        throw new Error(result.message || "login failed");
+      }
+
+      toast.success(result?.message || "login successful");
     } catch(err){
       console.log(err);
     }
   };
+  
   return (
     <div>
       <dialog id="my_modal_3" className="modal">

@@ -16,8 +16,32 @@ function Signup() {
   } = useForm();
 
   const onSubmit = async (data) => {
+    try{
+      const res = await fetch("http://localhost:3000/api/v1/users/login",{
+        method: "POST",
+        headers :{
+          "Content-Type" : "application/json",
+        } ,
+        body: JSON.stringify({
+          fullName: data.fullname,
+          email: data.email,
+          password: data.password,
+        }),
+      });
+
+      const result = await res.json();
+
+      if(!res.ok){
+        throw new Error(result.message);
+      }
+      toast.success("Signup successful");
+      navigate(form, {replace: true});
+    } catch(error){
+      console.log(error);
+      toast.error(error.message);
+    }
     const userInfo = {
-      fullname: data.fullname,
+      fullName: data.fullname,
       email: data.email,
       password: data.password,
     };
