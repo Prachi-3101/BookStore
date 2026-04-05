@@ -17,8 +17,11 @@ function App() {
           <Route path="/" element={<Home />} />
            <Route path="/course" element={<Courses />} />
            <Route path="/login" element={<Signup />} />
-           <Route path="/signup" element={<Signup />} />
+           <Route path="/register" element={<Signup />} />
           </Routes>
+
+          <Toaster position="top-center" reverseOrder={false} />
+
   </>
   )
 }

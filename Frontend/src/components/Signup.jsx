@@ -17,7 +17,7 @@ function Signup() {
 
   const onSubmit = async (data) => {
     try{
-      const res = await fetch("http://localhost:3000/api/v1/users/login",{
+      const res = await fetch("http://localhost:8000/api/v1/users/register",{
         method: "POST",
         headers :{
           "Content-Type" : "application/json",
@@ -28,6 +28,7 @@ function Signup() {
           password: data.password,
         }),
       });
+      console.log(res);
 
       const result = await res.json();
 
@@ -35,7 +36,7 @@ function Signup() {
         throw new Error(result.message);
       }
       toast.success("Signup successful");
-      navigate(form, {replace: true});
+      navigate(from, {replace: true});
     } catch(error){
       console.log(error);
       toast.error(error.message);
